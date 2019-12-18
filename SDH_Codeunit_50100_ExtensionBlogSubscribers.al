@@ -18,7 +18,7 @@ codeunit 50100 "Extension Blogs Subscriber"
     [EventSubscriber(ObjectType::Table, Database::"Item Journal Line", 'OnAfterCopyItemJnlLineFromSalesHeader', '', true, true)]
     local procedure TransferSourceofSalesToJournalLine(SalesHeader: Record "Sales Header"; var ItemJnlLine: Record "Item Journal Line")
     begin
-        ItemJnlLine."Source Code" := SalesHeader."Source of Sales";
+        ItemJnlLine."Source of Sales" := SalesHeader."Source of Sales";
     end;
 
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Item Jnl.-Post Line", 'OnAfterInitItemLedgEntry', '', true, true)]
